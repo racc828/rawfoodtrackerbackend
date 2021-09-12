@@ -6,10 +6,10 @@ class Api::V1::UsersController < ApplicationController
     end
   
     def create
-        user = User.find_by(username: params[:user][:username])
+        user = User.find_by(email: params[:user][:email])
         if user.present?
         render json: {
-            error: "User Exists Already"
+            error: "Email already exists"
         }, status: 404
         else
         newUser = User.create(user_params)
