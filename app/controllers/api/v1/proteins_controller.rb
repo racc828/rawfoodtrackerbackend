@@ -10,7 +10,8 @@ class Api::V1::ProteinsController < ApplicationController
         protein = Protein.create(protrein_params)
         render json: {
             id: protein.id,
-            name: protein.name
+            name: protein.name,
+            meats: protein.meats
         }
     end
   
