@@ -7,12 +7,20 @@ class Api::V1::ProteinsController < ApplicationController
     end
   
     def create      
-        protein = Protein.create(protrein_params)
-        render json: {
-            id: protein.id,
-            name: protein.name,
-            meats: protein.meats
-        }
+        protein = Protein.find_by(name: params[:name])
+        if protein.present? 
+            render json: {
+                error: "Protein already exists"
+            }, status: 404
+        else 
+            newProtein = Protein.create(protein_params)
+            render json: {
+                id: newProtein.id,
+                name: newProtein.name,
+                meats: newProtein.meats
+            }
+        end 
+       
     end
   
     def show
