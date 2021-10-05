@@ -12,7 +12,7 @@ class Api::V1::PetsController < ApplicationController
             id: pet.id,
             name: pet.name,
             breed: pet.breed,
-            age: pet.age
+            age: pet.age,
             user_id: pet.user_id
         }
     end
