@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  muscle: 1
+  bone: 1
+  vegetable: 1
+  liver: 1
+  secretingOrgan: 1
+  nut: 1
+  fruit: 1
+
+two:
+  muscle: 1
+  bone: 1
+  vegetable: 1
+  liver: 1
+  secretingOrgan: 1
+  nut: 1
+  fruit: 1

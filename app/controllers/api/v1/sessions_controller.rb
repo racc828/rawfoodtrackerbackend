@@ -8,7 +8,8 @@ class Api::V1::SessionsController < ApplicationController
         username: current_user.username,
         firstname: current_user.firstname,
         lastname: current_user.lastname,
-        email: current_user.email
+        email: current_user.email,
+        pets: current_user.pets
       }
     end
   
@@ -20,6 +21,7 @@ class Api::V1::SessionsController < ApplicationController
           username: user.username,
           firstname: user.firstname, 
           lastname: user.lastname,
+          pets: user.pets,
           jwt: JWT.encode({id: user.id}, "rawfeedingtracker")
         }
       else

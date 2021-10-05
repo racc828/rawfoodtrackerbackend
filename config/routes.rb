@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
 		namespace :v1 do
-			resources :users, :meats, :proteins
+			resources :users, :meats, :proteins, :pets, :portions
       post '/sessions', to: 'sessions#create'
       get '/sessions/current_user', to: 'sessions#show'
 		end
