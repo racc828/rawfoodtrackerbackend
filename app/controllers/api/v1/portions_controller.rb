@@ -14,7 +14,7 @@ class Api::V1::PortionsController < ApplicationController
             bone: portion.bone,
             vegetable: portion.vegetable, 
             liver: portion.liver,
-            secretingOrgan: portion.secretingOrgan,
+            organ: portion.organ,
             nut: portion.nut,
             fruit: portion.fruit,
             pet_id: portion.pet_id
@@ -30,7 +30,7 @@ class Api::V1::PortionsController < ApplicationController
     private
   
     def portion_params
-      params.require(:portion).permit(:muscle, :bone, :vegetable, :liver, :secretingOrgan, :nut, :fruit, :pet_id)
+      params.require(:portion).permit(:muscle, :bone, :vegetable, :liver, :organ, :nut, :fruit, :pet_id)
     end
   
   end
