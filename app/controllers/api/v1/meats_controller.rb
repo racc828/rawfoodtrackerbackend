@@ -3,7 +3,20 @@ class Api::V1::MeatsController < ApplicationController
 
     def index
       meats = Meat.all
-      render json: meats
+      meatsJson = meats.map{|meat|
+        protein =Protein.find_by(id: meat.protein_id)
+        {
+            proteinName: protein.name,
+            name: meat.name,
+            protein_id: meat.protein_id,
+            bone: meat.bone,
+            muscle: meat.muscle
+        }
+      }
+      sortedMeatsJson = meatsJson.sort_by {|meat|
+        meat[:proteinName]
+      }
+      render json: sortedMeatsJson
     end
   
     def create      

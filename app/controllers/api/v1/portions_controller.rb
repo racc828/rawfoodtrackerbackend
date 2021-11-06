@@ -20,6 +20,12 @@ class Api::V1::PortionsController < ApplicationController
             pet_id: portion.pet_id
         }
     end
+
+    def get_pet_portions 
+        pet = Pet.find_by(id: params[:pet_id])
+        firstPetPortion = pet.portions[0]
+        render json: firstPetPortion
+    end
   
     def show
       portion = Portion.find_by(id: params[:id])

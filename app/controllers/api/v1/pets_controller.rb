@@ -19,7 +19,14 @@ class Api::V1::PetsController < ApplicationController
   
     def show
       pet = Pet.find_by(id: params[:id])
-      render json: pet
+      petJson = {
+        id: pet.id,
+        name: pet.name,
+        breed: pet.breed,
+        age: pet.age,
+        hasPortion: pet.portions.length != 0 ? true : false
+      }
+      render json: petJson
     end
   
 
