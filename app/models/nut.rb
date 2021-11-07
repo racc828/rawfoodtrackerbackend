@@ -1,0 +1,2 @@
+class Nut < ApplicationRecord
+end

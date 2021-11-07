@@ -1,3 +1,3 @@
 class ProteinSerializer < ActiveModel::Serializer
-  attributes :id, :name, :meats
+  attributes :id, :name, :bones
 end

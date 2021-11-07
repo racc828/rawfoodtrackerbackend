@@ -4,7 +4,7 @@ class CreateMeats < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :protein
       t.integer :muscle
-      t.integer :bone
+      t.integer :bone_content
 
       t.timestamps
     end

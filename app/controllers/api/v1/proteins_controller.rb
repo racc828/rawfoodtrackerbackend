@@ -17,7 +17,7 @@ class Api::V1::ProteinsController < ApplicationController
             render json: {
                 id: newProtein.id,
                 name: newProtein.name,
-                meats: newProtein.meats
+                bones: newProtein.bones
             }
         end 
        
