@@ -9,7 +9,7 @@ class Api::V1::MealsController < ApplicationController
 
     def get_all_categories 
         veggies = Veggie.all
-        fruits = Fruit.all,
+        fruits = Fruit.all
         nuts = Nut.all 
         organs = Organ.all 
         livers = Liver.all
@@ -31,7 +31,7 @@ class Api::V1::MealsController < ApplicationController
         meal = Meal.create(meal_params)
         foodTypes = params[:foods]
         foodTypes.map { |food| 
-            Food.create("category_id": food[:id], "ounces": food[:ounces], "meal_id": meal.id)
+            Food.create("category_id": food[:id], "ounces": food[:ounces], "meal_id": meal.id, "category_name": food[:categoryName])
         }
         render json: {
             id: meal.id,
@@ -50,7 +50,7 @@ class Api::V1::MealsController < ApplicationController
     private
   
     def meal_params
-      params.require(:meal).permit(:name, :pet_id, foods: [:id, :name, :ounces])
+      params.require(:meal).permit(:name, :pet_id, foods: [:id, :name, :ounces, :categoryName])
     end
   
   end
