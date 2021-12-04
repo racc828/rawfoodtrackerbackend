@@ -16,13 +16,13 @@ class Api::V1::MealsController < ApplicationController
         bones = Bone.all
         muscles = Muscle.all
         category_json = {
-            veggies: veggies, 
-            fruits: fruits,
-            nuts: nuts,
-            organs: organs,
-            livers: livers,
-            bones: bones,
-            muscles: muscles
+            veggie: veggies, 
+            fruit: fruits,
+            nut: nuts,
+            organ: organs,
+            liver: livers,
+            bone: bones,
+            muscle: muscles
         }
         render json: category_json
     end

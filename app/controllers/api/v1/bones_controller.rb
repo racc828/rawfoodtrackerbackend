@@ -20,7 +20,6 @@ class Api::V1::BonesController < ApplicationController
     end
   
     def create      
-      byebug
         bone = Bone.create(bone_params)
         render json: {
             id: bone.id,
